@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Input } from "../";
 import PropType from "prop-types";
 
-function FormTemplate({ fields, callback, buttonText }) {
+function FormTemplate({ fields, callback, buttonText, buttonType }) {
   const [fieldValues, setFieldValues] = useState({});
 
   return (
@@ -25,7 +25,7 @@ function FormTemplate({ fields, callback, buttonText }) {
         />
       ))}
 
-      <Button type="submit">{buttonText}</Button>
+      <Button buttonType={buttonType}>{buttonText}</Button>
     </form>
   );
 }
