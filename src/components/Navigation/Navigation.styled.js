@@ -5,7 +5,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 1em 2em;
   border-bottom: 2px solid #000;
 `;
 
@@ -24,6 +24,6 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Logo = styled.img`
-  max-height: 50px;
+  max-height: 2em;
   max-width: 100%;
 `;
