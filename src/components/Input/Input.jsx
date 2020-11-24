@@ -10,6 +10,7 @@ function Input({
   checkbox,
   options,
   handleChange,
+  required
 }) {
   switch (type) {
     case "textarea":
@@ -19,6 +20,7 @@ function Input({
           value={value}
           placeholder={placeholder}
           onChange={handleChange}
+          required={required}
         />
       );
     case "email":
@@ -28,6 +30,7 @@ function Input({
           value={value}
           placeholder={placeholder}
           onChange={handleChange}
+          required={required}
         />
       );
     case "number":
@@ -38,6 +41,7 @@ function Input({
           value={value}
           placeholder={placeholder}
           onChange={handleChange}
+          required={required}
         />
       );
     case "dropdown":
@@ -92,6 +96,7 @@ function Input({
           value={value}
           placeholder={placeholder}
           onChange={handleChange}
+          required={required}
         />
       );
   }

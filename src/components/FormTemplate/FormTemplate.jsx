@@ -18,6 +18,7 @@ function FormTemplate({ fields, callback, buttonText }) {
           key={field.name}
           name={field.name}
           placeholder={field.placeholder}
+          required={field.required}
           handleChange={(e) =>
             setFieldValues({ ...fieldValues, [field.name]: e.target.value })
           }
