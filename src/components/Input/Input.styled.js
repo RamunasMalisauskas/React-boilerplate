@@ -9,12 +9,7 @@ export const Input = styled.input`
   padding: 0 1em;
   margin-bottom: 2em;
   &:focus {
-    border-image-source: linear-gradient(
-      90deg,
-      rgba(255, 104, 196, 0.7) 0%,
-      rgba(255, 142, 111, 0.7) 100%
-    );
-    border-image-slice: 2;
+    border-bottom: 2px solid #ff7f50;
   }
 `;
 export const Email = styled.input`
@@ -26,12 +21,7 @@ export const Email = styled.input`
   padding: 0 1em;
   margin-bottom: 2em;
   &:focus {
-    border-image-source: linear-gradient(
-      90deg,
-      rgba(255, 104, 196, 0.7) 0%,
-      rgba(255, 142, 111, 0.7) 100%
-    );
-    border-image-slice: 2;
+    border-bottom: 2px solid #ff7f50;
   }
 `;
 
@@ -44,12 +34,7 @@ export const TextArea = styled.textarea`
   padding: 1em;
   margin-bottom: 2em;
   &:focus {
-    border-image-source: linear-gradient(
-      90deg,
-      rgba(255, 104, 196, 0.7) 0%,
-      rgba(255, 142, 111, 0.7) 100%
-    );
-    border-image-slice: 2;
+    border-bottom: 2px solid #ff7f50;
   }
 `;
 
