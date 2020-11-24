@@ -4,6 +4,7 @@ import { Navigation } from "./components";
 
 const HomeLazy = lazy(() => import("./pages/Home/Home.jsx"));
 const AboutLazy = lazy(() => import("./pages/About/About.jsx"));
+const LoginLazy = lazy(() => import("./pages/Login/Login.jsx"));
 
 function Routes() {
   return (
@@ -13,6 +14,7 @@ function Routes() {
         <Suspense fallback="loading">
           <Route exact path="/" component={HomeLazy} />
           <Route exact path="/about" component={AboutLazy} />
+          <Route exact path="/login" component={LoginLazy} />
         </Suspense>
       </Switch>
     </Router>
