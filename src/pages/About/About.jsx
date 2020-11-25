@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Section } from "../../components/";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function About() {
-  return <div>about page</div>;
+  const auth = useContext(AuthContext);
+
+  return <Section> {auth.token ? "This is secret page" : "you forgot to login"}</Section>;
 }
 
 export default About;
