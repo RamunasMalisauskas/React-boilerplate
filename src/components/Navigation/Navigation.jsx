@@ -12,8 +12,9 @@ function Navigation() {
 
       <S.Action>
         <S.StyledLink to="/">Home</S.StyledLink>
-        <S.StyledLink to="/about">About</S.StyledLink>
+        <S.StyledLink to="/addbooks">Add Books</S.StyledLink>
         <S.StyledLink to="/login">Login</S.StyledLink>
+        <S.StyledLink to="/register">Register</S.StyledLink>
       </S.Action>
     </S.Header>
   );
