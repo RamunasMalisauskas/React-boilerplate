@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { FormTemplate, Section } from "../../components/";
-import formData from "../../utils/FormData";
+import loginFormData from "../../utils/LoginFormData";
 
 function Login(fieldValues, auth) {
-  fetch("http://localhost:8080/login", {
+  fetch("http://localhost:8081/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -13,7 +13,9 @@ function Login(fieldValues, auth) {
     }),
   })
     .then((res) => res.json())
-    .then((data) => auth.setToken("Bearer " + data.token))
+    .then(
+      (data) => auth.setToken("Bearer " + data.token) + console.log(data.token)
+    )
     .catch((err) => console.log("error: " + err));
 }
 
@@ -23,9 +25,11 @@ function LoginPage() {
   return (
     <>
       <Section>
+        <h1>login</h1>
+
         <FormTemplate
           callback={(fieldValues) => Login(fieldValues, auth)}
-          fields={formData}
+          fields={loginFormData}
           buttonText="Login"
           buttonType="submit"
         />
