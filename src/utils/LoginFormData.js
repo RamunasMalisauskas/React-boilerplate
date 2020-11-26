@@ -1,4 +1,4 @@
-const formData = [
+const loginFormData = [
   {
     id: 1,
     type: "text",
@@ -15,4 +15,4 @@ const formData = [
   },
 ];
 
-export default formData;
+export default loginFormData;
