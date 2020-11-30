@@ -8,16 +8,9 @@ const loginFormData = [
   },
   {
     id: 2,
-    type: "text",
+    type: "password",
     name: "password",
     placeholder: "enter your pasword",
-    required: true,
-  },
-  {
-    id: 3,
-    type: "text",
-    name: "repeat_password",
-    placeholder: "repeat your pasword",
     required: true,
   },
 ];

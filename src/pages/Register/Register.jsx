@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
-import { FormTemplate, Section } from "../../components/";
+import { FormTemplate, Section, Notification } from "../../components/";
 import regFormData from "../../utils/RegFormData";
 
-function Login(fieldValues, auth) {
+function Login(fieldValues, auth, setError) {
   fetch("http://localhost:8081/register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -13,22 +13,51 @@ function Login(fieldValues, auth) {
     }),
   })
     .then((res) => res.json())
-    .then(
-      (data) => auth.setToken("Bearer " + data.token) + console.log(data.token)
-    )
-    .catch((err) => console.log("error: " + err));
+    .then((data) => {
+      if (data.token) {
+        auth.setToken("Bearer " + data.token);
+        setError({
+          status: true,
+          msg: data.msg,
+          color: "not" || "registry completed",
+        });
+      } else {
+        setError({
+          status: true,
+          color: "error",
+          msg: data.msg || "input error",
+        });
+      }
+    })
+    .catch((err) => {
+      setError({ status: true, color: "error", msg: "server error" });
+      console.log(err);
+    });
 }
 
 function LoginPage() {
   const auth = useContext(AuthContext);
+  const [error, setError] = useState({
+    status: true,
+    color: "",
+    msg: "error",
+  });
 
   return (
     <>
       <Section>
-          <h1>register</h1>
+        {error.status && (
+          <Notification
+            notificationMessage={error.msg}
+            handleClick={() => setError({ status: false })}
+            color={error.color}
+          />
+        )}
+
+        <h1>register</h1>
 
         <FormTemplate
-          callback={(fieldValues) => Login(fieldValues, auth)}
+          callback={(fieldValues) => Login(fieldValues, auth, setError)}
           fields={regFormData}
           buttonText="Register"
           buttonType="submit"
