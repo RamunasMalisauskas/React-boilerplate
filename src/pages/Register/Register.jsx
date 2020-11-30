@@ -38,9 +38,9 @@ function Login(fieldValues, auth, setError) {
 function LoginPage() {
   const auth = useContext(AuthContext);
   const [error, setError] = useState({
-    status: true,
+    status: false,
     color: "",
-    msg: "error",
+    msg: "",
   });
 
   return (
