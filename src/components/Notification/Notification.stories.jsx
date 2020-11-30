@@ -5,14 +5,14 @@ import Notification from "./Notification.jsx";
 storiesOf("Notification", module)
   .add("error", () => (
     <Notification
-      notificationMessage="error notificaion"
+      notificationMessage="error notification"
       handleClick={() => console.log("click")}
       color="error"
     />
   ))
   .add("success", () => (
     <Notification
-      notificationMessage="success notificaion"
+      notificationMessage="success notification"
       handleClick={() => console.log("click")}
     />
   ));
