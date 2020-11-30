@@ -12,18 +12,6 @@ export const Input = styled.input`
     border-bottom: 2px solid #ff7f50;
   }
 `;
-export const Email = styled.input`
-  width: 100%;
-  box-sizing: border-box;
-  border: 0;
-  border-bottom: 2px solid gray;
-  height: ${(props) => props.theme.stardart.heigth};
-  padding: 0 1em;
-  margin-bottom: 2em;
-  &:focus {
-    border-bottom: 2px solid #ff7f50;
-  }
-`;
 
 export const TextArea = styled.textarea`
   width: 100%;

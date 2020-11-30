@@ -10,7 +10,7 @@ function Input({
   checkbox,
   options,
   handleChange,
-  required
+  required,
 }) {
   switch (type) {
     case "textarea":
@@ -25,7 +25,7 @@ function Input({
       );
     case "email":
       return (
-        <S.Email
+        <S.Input
           type="email"
           value={value}
           placeholder={placeholder}
@@ -38,6 +38,16 @@ function Input({
         <S.Input
           type="number"
           step="0.1"
+          value={value}
+          placeholder={placeholder}
+          onChange={handleChange}
+          required={required}
+        />
+      );
+    case "password":
+      return (
+        <S.Input
+          type="password"
           value={value}
           placeholder={placeholder}
           onChange={handleChange}
