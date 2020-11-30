@@ -8,7 +8,7 @@ const loginFormData = [
   },
   {
     id: 2,
-    type: "text",
+    type: "password",
     name: "password",
     placeholder: "enter your pasword",
     required: true,
