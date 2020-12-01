@@ -19,7 +19,7 @@ function Login(fieldValues, auth, setError) {
         setError({
           status: true,
           msg: data.msg,
-          color: "not" || "registry completed",
+          color: "" || "registry completed",
         });
       } else {
         setError({
